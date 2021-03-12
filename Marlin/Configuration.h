@@ -516,9 +516,9 @@
     #define DEFAULT_Ki_LIST {   1.08,   1.08 }
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
-    #define DEFAULT_Kp  53.03
-    #define DEFAULT_Ki   6.35
-    #define DEFAULT_Kd 110.78
+    #define DEFAULT_Kp  22.20
+    #define DEFAULT_Ki   1.08
+    #define DEFAULT_Kd 114.00
   #endif
 #endif // PIDTEMP
 
@@ -557,9 +557,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 169.95
-  #define DEFAULT_bedKi 32.93
-  #define DEFAULT_bedKd 584.72
+  #define DEFAULT_bedKp 100.00
+  #define DEFAULT_bedKi 5.023
+  #define DEFAULT_bedKd 305.4
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -853,7 +853,7 @@
  * When changing speed and direction, if the difference is less than the
  * value set here, it may happen instantaneously.
  */
-#define CLASSIC_JERK
+//#define CLASSIC_JERK
 #if ENABLED(CLASSIC_JERK)
   #define DEFAULT_XJERK 10.0
   #define DEFAULT_YJERK 10.0
@@ -1059,7 +1059,7 @@
  *     O-- FRONT --+
  */
 // BLTouch mount designed for dual blower: https://www.thingiverse.com/thing:4431538
-#define NOZZLE_TO_PROBE_OFFSET { -34, -28, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -34, -28, -3.06 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
