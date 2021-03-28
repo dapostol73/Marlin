@@ -34,6 +34,22 @@
   #define FIL_RUNOUT_PIN                      10
 #endif
 
+#if HAS_TRINAMIC
+  /**
+   * TMC2208/TMC2209 stepper drivers
+   *
+   * Hardware serial communication ports.
+   * If undefined software serial is used according to the pins below
+   */
+  #define X_HARDWARE_SERIAL  Serial1
+  #define Y_HARDWARE_SERIAL  Serial1
+  #define Z_HARDWARE_SERIAL  Serial1
+  #define E0_HARDWARE_SERIAL Serial1
+
+  // Reduce baud rate to improve software serial reliability
+  #define TMC_BAUD_RATE 19200
+#endif
+
 // Support BLTouch and fixed probes
 #if ENABLED(BLTOUCH)
   #if ENABLED(Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN)
